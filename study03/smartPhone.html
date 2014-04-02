@@ -1,0 +1,59 @@
+<meta charset="utf-8">
+<script>
+    
+(function(){
+    
+    var number = "";
+
+    function ApplePhone(options){    
+        this.model = "iPhone";
+        this.color = options.color;
+        this.price = options.price;
+
+    }
+
+    ApplePhone.prototype.call = function(){
+
+        if(number === ""){
+            console.log("개통하세요!");
+        }
+        else{
+            console.log("전화를 겁니다!");
+        }
+
+    };
+    
+    ApplePhone.prototype.setNumber = function(userNumber){
+        number = userNumber;
+    };
+    
+    
+    window.ApplePhone = ApplePhone;
+
+})();
+
+    
+var myPhone = new ApplePhone({color:"white", price:100});
+var myPhone2 = new ApplePhone({color:"black", price:200});
+
+console.log(myPhone.model);
+console.log(myPhone.color);
+console.log(myPhone.price);
+
+
+myPhone.setNumber = "010-1234-5678";
+myPhone.call();
+
+console.log("----------------------------------");
+
+console.log(myPhone2.model);
+console.log(myPhone2.color);
+console.log(myPhone2.price);
+
+
+</script>
+
+
+
+
+

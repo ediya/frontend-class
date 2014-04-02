@@ -1,0 +1,61 @@
+<meta charset="utf-8">
+<script>
+    
+var PrintNum = function(){}; 
+PrintNum.staticMethod = function()
+{
+    for(var num=1; num<=100; num++){
+        console.log(num);
+	}
+};
+    
+PrintNum.staticMethod();
+    
+    
+    
+var EvenNumber = function(){}; 
+EvenNumber.staticMethod = function()
+{ 
+   for(var i=2; i<=100; i+=2){
+		console.log(i);
+   }
+};  
+
+EvenNumber.staticMethod();
+    
+    
+    
+var GuGudan = function(){}; 
+GuGudan.staticMethod = function()
+{ 
+  for(var i=2; i<10; i++){
+		for(var j=1; j<10; j++){
+			console.log(i + "*" + j + "=" + i*j);
+		}
+	}
+};   
+
+GuGudan.staticMethod();
+
+
+
+var GetTotal = function(){};
+GetTotal.staticMethod = function()
+{
+    var total = 0;
+    
+    while(1){
+        var num = prompt("숫자를 입력하세요");
+        var total = total + Number(num);            
+            
+        if(num == null)
+            break;        
+    }
+    alert(total);    
+}
+
+GetTotal.staticMethod();
+
+
+
+</script>
