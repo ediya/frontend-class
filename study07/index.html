@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>다음 검색 API 과제</title>
+
+	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+	<div class="wrapper">
+
+		<h1>다음 검색 API</h1>
+
+		<div class="search">
+			<form class="search-form">
+				<div class="input-append">
+					<input class="span2" id="query" type="text" value="다음">
+					<button id = "button" type="submit">검색</button>
+				</div>
+			</form>	
+		</div>
+
+		<div class="tab" >
+			<ul class="nav nav-tabs">
+				<li><a href="#">블로그</a></li>
+				<li><a href="#">게시판</a></li>
+				<li><a href="#">웹</a></li>
+				<li><a href="#">이미지</a></li>
+				<li><a href="#">지식</a></li>
+				<li><a href="#">카페</a></li>
+			</ul>
+		</div>
+
+		<div class="list">
+			<div class="box">검색해 주세요</div>
+			<button class="btn hide more" type="button">더보기</button>
+		</div>
+
+	</div>
+
+	<script type="text/javascript">
+		function replace(str) {
+			if (typeof(str) == "string") {
+				str = str.replace(/&gt;/ig, ">");
+				str = str.replace(/&lt;/ig, "<");
+				str = str.replace(/&#039;/g, "'");
+				str = str.replace(/&quot;/ig, '"');
+				str = str.replace(/&amp;/ig, '&');
+			}
+			return str;
+		}		
+
+	</script>
+
+	<script type="text/template" id="listTemplate">
+		<ul>
+			<% for(var i = 0; i < list.length; i++) { %>
+				<li><img src="<%=list[i].image%>" width= '100px' hegith = '100px'/><a href="<%=list[i].link%>"><%=replace(list[i].title)%></a></li>
+				<% } %>
+			</ul>
+		</script>
+
+
+		<script src="//code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="//underscorejs.org/underscore.js"></script>
+		<script src="config.js"></script>
+		
+		<script src="Searcher.js"></script>
+		<script src="main.js"></script>
+	</body>
+	</html>
+
+
