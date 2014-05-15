@@ -16,7 +16,12 @@ $('#go').toggle(function(){
 
 /*
 $(document).ready(function() {
+<<<<<<< HEAD
                 
+=======
+    //이곳에 실행될 함수를 작성한다
+    
+>>>>>>> master
     $('#go').on('click', function(){
     
         $('#box').animate({                    
